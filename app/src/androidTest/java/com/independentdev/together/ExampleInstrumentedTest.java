@@ -1,4 +1,4 @@
-package com.independentdev.happyday;
+package com.independentdev.together;
 
 import android.content.Context;
 import android.support.test.InstrumentationRegistry;

@@ -1,4 +1,4 @@
-package com.independentdev.happyday;
+package com.independentdev.together;
 
 import org.junit.Test;
 

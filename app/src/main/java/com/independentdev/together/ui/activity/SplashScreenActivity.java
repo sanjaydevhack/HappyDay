@@ -1,9 +1,9 @@
-package com.independentdev.happyday.ui.activity;
+package com.independentdev.together.ui.activity;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 
-import com.independentdev.happyday.R;
+import com.independentdev.together.R;
 
 public class SplashScreenActivity extends AppCompatActivity {
 

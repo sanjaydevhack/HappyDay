@@ -1,4 +1,4 @@
-package com.independentdev.happyday.util;
+package com.independentdev.together.util;
 
 /**
  * Created by lenovo on 01-Nov-16.
