@@ -15,7 +15,7 @@ import com.independentdev.together.R;
 import com.independentdev.together.ui.activity.SplashScreenActivity;
 
 /**
- * Created by lenovo on 27-Nov-16.
+ * Created by Sanjay on 27-Nov-16.
  */
 
 public class MyFirebaseMessagingService extends FirebaseMessagingService {
