@@ -12,7 +12,7 @@ import android.util.Log;
 import com.google.firebase.messaging.FirebaseMessagingService;
 import com.google.firebase.messaging.RemoteMessage;
 import com.independentdev.together.R;
-import com.independentdev.together.ui.activity.SplashScreenActivity;
+import com.independentdev.together.ui.SplashScreenActivity;
 
 /**
  * Created by Sanjay on 27-Nov-16.

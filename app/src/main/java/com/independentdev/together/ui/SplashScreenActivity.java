@@ -1,12 +1,12 @@
-package com.independentdev.together.ui.activity;
+package com.independentdev.together.ui;
 
 import android.content.Intent;
+import android.os.Bundle;
 import android.os.Handler;
 import android.support.v7.app.AppCompatActivity;
-import android.os.Bundle;
 
 import com.independentdev.together.R;
-import com.independentdev.together.ui.MainActivity;
+import com.independentdev.together.ui.activity.MainActivity;
 
 public class SplashScreenActivity extends AppCompatActivity {
 
