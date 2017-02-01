@@ -2,7 +2,6 @@ package com.independentdev.together.util;
 
 import android.app.AlertDialog;
 import android.app.Dialog;
-import android.content.Context;
 import android.content.DialogInterface;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
@@ -17,13 +16,7 @@ import com.independentdev.together.R;
 
 public class AlertDialogFragment extends DialogFragment {
 
-    private Context mContext;
-    private String mTitle;
-    private String mMessage;
-    private String positiveTxt;
-    private String negativeTxt;
-
-    public static AlertDialogFragment newInstance(Context mContext, String mTitle, String mMessage, String positiveTxt, String negativeTxt) {
+    public static AlertDialogFragment newInstance(String mTitle, String mMessage, String positiveTxt, String negativeTxt) {
         AlertDialogFragment frag = new AlertDialogFragment();
         Bundle args = new Bundle();
         args.putString("mTitle", mTitle);
@@ -38,10 +31,10 @@ public class AlertDialogFragment extends DialogFragment {
     @NonNull
     @Override
     public Dialog onCreateDialog(Bundle savedInstanceState) {
-        mTitle = getArguments().getString("mTitle");
-        mMessage = getArguments().getString("mMessage");
-        positiveTxt = getArguments().getString("positiveTxt");
-        negativeTxt = getArguments().getString("negativeTxt");
+        String mTitle = getArguments().getString("mTitle");
+        String mMessage = getArguments().getString("mMessage");
+        String positiveTxt = getArguments().getString("positiveTxt");
+        String negativeTxt = getArguments().getString("negativeTxt");
 
         return new AlertDialog.Builder(getActivity(), R.style.MyDialogTheme).setTitle(mTitle).setMessage(mMessage).setPositiveButton(positiveTxt, new DialogInterface.OnClickListener() {
             @Override
