@@ -2,35 +2,26 @@ package com.independentdev.together.model;
 
 import com.google.gson.annotations.SerializedName;
 
+import java.util.List;
+
 /**
- * Created by sanjayjith.madhavan on 2/1/2017.
+ * Created by sanjayjith.madhavan on 2/2/2017.
  */
 
 public class ShowCase {
 
-    @SerializedName("posterImgPath")
-    private String posterImgPath;
-    @SerializedName("posterTitle")
-    private String posterTitle;
+    @SerializedName("data")
+    private List<ShowCaseData> showCaseDataList;
 
-    public ShowCase(String posterImgPath, String posterTitle) {
-        this.posterImgPath = posterImgPath;
-        this.posterTitle = posterTitle;
+    public ShowCase(List<ShowCaseData> showCaseDataList) {
+        this.showCaseDataList = showCaseDataList;
     }
 
-    public String getPosterImgPath() {
-        return posterImgPath;
+    public List<ShowCaseData> getShowCaseDataList() {
+        return showCaseDataList;
     }
 
-    public void setPosterImgPath(String posterImgPath) {
-        this.posterImgPath = posterImgPath;
-    }
-
-    public String getPosterTitle() {
-        return posterTitle;
-    }
-
-    public void setPosterTitle(String posterTitle) {
-        this.posterTitle = posterTitle;
+    public void setShowCaseDataList(List<ShowCaseData> showCaseDataList) {
+        this.showCaseDataList = showCaseDataList;
     }
 }

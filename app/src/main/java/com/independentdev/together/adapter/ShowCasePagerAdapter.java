@@ -2,21 +2,20 @@ package com.independentdev.together.adapter;
 
 import android.content.Context;
 import android.support.v4.view.PagerAdapter;
+import android.support.v4.view.ViewPager;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
+import android.widget.RelativeLayout;
 import android.widget.TextView;
 
 import com.bumptech.glide.Glide;
 import com.bumptech.glide.load.engine.DiskCacheStrategy;
 import com.independentdev.together.R;
-import com.independentdev.together.model.ShowCase;
+import com.independentdev.together.model.ShowCaseData;
 
 import java.util.List;
-
-import butterknife.BindView;
-import butterknife.ButterKnife;
 
 /**
  * Created by sanjayjith.madhavan on 2/1/2017.
@@ -25,31 +24,33 @@ import butterknife.ButterKnife;
 public class ShowCasePagerAdapter extends PagerAdapter {
 
     private Context mContext;
-    private List<ShowCase> showCaseList;
-    @BindView(R.id.showCaseSlideIMV)
-    ImageView showCaseSlideIMV;
-    @BindView(R.id.showCaseTitle)
-    TextView showCaseTitle;
+    private List<ShowCaseData> showCaseDataList;
 
-    public ShowCasePagerAdapter(Context mContext, List<ShowCase> showCaseList) {
+    public ShowCasePagerAdapter(Context mContext, List<ShowCaseData> showCaseDataList) {
         this.mContext = mContext;
-        this.showCaseList = showCaseList;
+        this.showCaseDataList = showCaseDataList;
     }
 
     @Override
     public Object instantiateItem(ViewGroup container, int position) {
+
         LayoutInflater inflater = LayoutInflater.from(mContext);
-        ViewGroup layout = (ViewGroup) inflater.inflate(position, container, false);
+        ViewGroup layout = (ViewGroup) inflater.inflate(R.layout.show_case_fragment, container, false);
         container.addView(layout);
 
-        ShowCase showCase = showCaseList.get(position);
+        ImageView showCaseSlideIMV = (ImageView) layout.findViewById(R.id.showCaseSlideIMV);
+        TextView showCaseTitle = (TextView) layout.findViewById(R.id.showCaseTitle);
 
-        Glide.with(mContext).load(showCase.getPosterImgPath())
-                .thumbnail(0.5f)
+        ShowCaseData showCaseData = showCaseDataList.get(position);
+
+        Glide.with(mContext).load(showCaseData.getPosterImgPath())
+                .fitCenter()
+                .error(R.drawable.ic_menu_camera)
                 .crossFade()
                 .diskCacheStrategy(DiskCacheStrategy.ALL)
+                .dontAnimate()
                 .into(showCaseSlideIMV);
-        showCaseTitle.setText(showCase.getPosterTitle());
+        showCaseTitle.setText(showCaseData.getPosterTitle());
 
 
         return layout;
@@ -57,23 +58,16 @@ public class ShowCasePagerAdapter extends PagerAdapter {
 
     @Override
     public int getCount() {
-        return showCaseList.size();
+        return showCaseDataList.size();
     }
 
     @Override
     public boolean isViewFromObject(View view, Object object) {
-        return false;
+        return view == object;
     }
 
-
-    static class ViewHolder {
-        @BindView(R.id.showCaseSlideIMV)
-        ImageView showCaseSlideIMV;
-        @BindView(R.id.showCaseTitle)
-        TextView showCaseTitle;
-
-        ViewHolder(View view) {
-            ButterKnife.bind(this, view);
-        }
+    @Override
+    public void destroyItem(ViewGroup container, int position, Object object) {
+        ((ViewPager) container).removeView((RelativeLayout) object);
     }
 }

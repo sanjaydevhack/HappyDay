@@ -6,6 +6,7 @@ import android.support.design.widget.NavigationView;
 import android.support.design.widget.Snackbar;
 import android.support.v4.app.DialogFragment;
 import android.support.v4.view.GravityCompat;
+import android.support.v4.view.ViewPager;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.app.AppCompatActivity;
@@ -16,11 +17,17 @@ import android.view.MenuItem;
 import android.view.View;
 
 import com.independentdev.together.R;
+import com.independentdev.together.adapter.ShowCasePagerAdapter;
+import com.independentdev.together.model.ShowCaseData;
 import com.independentdev.together.model.ShowCase;
 import com.independentdev.together.util.AlertDialogFragment;
 import com.independentdev.together.util.ApiClient;
 import com.independentdev.together.util.ApiInterface;
 
+import java.util.List;
+
+import butterknife.BindView;
+import butterknife.ButterKnife;
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
@@ -30,16 +37,24 @@ public class MainActivity extends AppCompatActivity
 
     private static final String TAG = MainActivity.class.getSimpleName();
 
+    @BindView(R.id.showCaseViewPager)
+    ViewPager viewPager;
+    @BindView(R.id.toolbar)
+    Toolbar toolbar;
+    @BindView(R.id.fab)
+    FloatingActionButton fab;
+    @BindView(R.id.drawer_layout)
+    DrawerLayout drawer;
+
+    private List<ShowCaseData> showCaseDataList;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
+        ButterKnife.bind(this);
+
         setSupportActionBar(toolbar);
-
-        makeShowCaseReq();
-
-        FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -52,7 +67,6 @@ public class MainActivity extends AppCompatActivity
             }
         });
 
-        DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(
                 this, drawer, toolbar, R.string.navigation_drawer_open, R.string.navigation_drawer_close);
         drawer.setDrawerListener(toggle);
@@ -60,8 +74,29 @@ public class MainActivity extends AppCompatActivity
 
         NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(this);
+
+        //------------------------------------------------------------------------------------------
+        ApiInterface apiService = ApiClient.getClient().create(ApiInterface.class);
+
+        Call<ShowCase> call = apiService.getShowCaseData();
+        call.enqueue(new Callback<ShowCase>() {
+            @Override
+            public void onResponse(Call<ShowCase> call, Response<ShowCase> response) {
+                int statusCode = response.code();
+                showCaseDataList = response.body().getShowCaseDataList();
+            }
+
+            @Override
+            public void onFailure(Call<ShowCase> call, Throwable t) {
+                Log.e(TAG, t.toString());
+            }
+        });
     }
 
+    @Override
+    protected void onStart() {
+        super.onStart();
+    }
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
@@ -86,14 +121,14 @@ public class MainActivity extends AppCompatActivity
     }
 
     private void makeShowCaseReq() {
-        ApiInterface apiService =
-                ApiClient.getClient().create(ApiInterface.class);
+        ApiInterface apiService = ApiClient.getClient().create(ApiInterface.class);
 
         Call<ShowCase> call = apiService.getShowCaseData();
         call.enqueue(new Callback<ShowCase>() {
             @Override
             public void onResponse(Call<ShowCase> call, Response<ShowCase> response) {
-                Log.d(TAG+"Res", response.toString());
+                int statusCode = response.code();
+                showCaseDataList = response.body().getShowCaseDataList();
             }
 
             @Override
@@ -111,6 +146,10 @@ public class MainActivity extends AppCompatActivity
 
         switch (id) {
             case R.id.nav_camera:
+                if (showCaseDataList != null) {
+                    ShowCasePagerAdapter showCasePagerAdapter = new ShowCasePagerAdapter(getApplicationContext(), showCaseDataList);
+                    viewPager.setAdapter(showCasePagerAdapter);
+                }
                 break;
             case R.id.nav_gallery:
                 break;
