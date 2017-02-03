@@ -15,14 +15,16 @@ import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.ImageView;
 
 import com.independentdev.together.R;
 import com.independentdev.together.adapter.ShowCasePagerAdapter;
-import com.independentdev.together.model.ShowCaseData;
 import com.independentdev.together.model.ShowCase;
+import com.independentdev.together.model.ShowCaseData;
 import com.independentdev.together.util.AlertDialogFragment;
 import com.independentdev.together.util.ApiClient;
 import com.independentdev.together.util.ApiInterface;
+import com.independentdev.together.util.ZoomOutPageTransformer;
 
 import java.util.List;
 
@@ -45,6 +47,8 @@ public class MainActivity extends AppCompatActivity
     FloatingActionButton fab;
     @BindView(R.id.drawer_layout)
     DrawerLayout drawer;
+    @BindView(R.id.testImg)
+    ImageView testImg;
 
     private List<ShowCaseData> showCaseDataList;
 
@@ -55,6 +59,8 @@ public class MainActivity extends AppCompatActivity
         ButterKnife.bind(this);
 
         setSupportActionBar(toolbar);
+        makeShowCaseReq();
+
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -74,23 +80,6 @@ public class MainActivity extends AppCompatActivity
 
         NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(this);
-
-        //------------------------------------------------------------------------------------------
-        ApiInterface apiService = ApiClient.getClient().create(ApiInterface.class);
-
-        Call<ShowCase> call = apiService.getShowCaseData();
-        call.enqueue(new Callback<ShowCase>() {
-            @Override
-            public void onResponse(Call<ShowCase> call, Response<ShowCase> response) {
-                int statusCode = response.code();
-                showCaseDataList = response.body().getShowCaseDataList();
-            }
-
-            @Override
-            public void onFailure(Call<ShowCase> call, Throwable t) {
-                Log.e(TAG, t.toString());
-            }
-        });
     }
 
     @Override
@@ -129,6 +118,19 @@ public class MainActivity extends AppCompatActivity
             public void onResponse(Call<ShowCase> call, Response<ShowCase> response) {
                 int statusCode = response.code();
                 showCaseDataList = response.body().getShowCaseDataList();
+                if (showCaseDataList != null) {
+                    ShowCasePagerAdapter showCasePagerAdapter = new ShowCasePagerAdapter(getApplicationContext(), showCaseDataList);
+                    viewPager.setAdapter(showCasePagerAdapter);
+                    viewPager.setCurrentItem(1);
+                    viewPager.setPageTransformer(true, new ZoomOutPageTransformer());
+
+                    // Disable clip to padding
+                    viewPager.setClipToPadding(false);
+                    // set padding manually, the more you set the padding the more you see of prev & next page
+                    viewPager.setPadding(100, 0, 100, 0);
+                    // sets a margin b/w individual pages to ensure that there is a gap b/w them
+                    viewPager.setPageMargin(20);
+                }
             }
 
             @Override
@@ -146,10 +148,6 @@ public class MainActivity extends AppCompatActivity
 
         switch (id) {
             case R.id.nav_camera:
-                if (showCaseDataList != null) {
-                    ShowCasePagerAdapter showCasePagerAdapter = new ShowCasePagerAdapter(getApplicationContext(), showCaseDataList);
-                    viewPager.setAdapter(showCasePagerAdapter);
-                }
                 break;
             case R.id.nav_gallery:
                 break;

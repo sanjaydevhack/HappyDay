@@ -5,3 +5,8 @@ Wellness(Ayurveda, Body Massage, Head Massage)
 Indoors
 Outdoors
 Tours(Biking tour, Walks, Learn Photography, Religious tours, City tours)
+
+
+Reference Link:
+1) http://www.jsonschema2pojo.org/
+2) http://stackoverflow.com/questions/21815008/using-retrofit-to-access-json-arrays
