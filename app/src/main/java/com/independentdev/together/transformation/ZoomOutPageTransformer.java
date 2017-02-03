@@ -1,4 +1,4 @@
-package com.independentdev.together.util;
+package com.independentdev.together.transformation;
 
 import android.support.v4.view.ViewPager;
 import android.view.View;

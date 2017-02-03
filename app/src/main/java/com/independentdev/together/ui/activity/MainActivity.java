@@ -24,7 +24,7 @@ import com.independentdev.together.model.ShowCaseData;
 import com.independentdev.together.util.AlertDialogFragment;
 import com.independentdev.together.util.ApiClient;
 import com.independentdev.together.util.ApiInterface;
-import com.independentdev.together.util.ZoomOutPageTransformer;
+import com.independentdev.together.transformation.ZoomOutPageTransformer;
 
 import java.util.List;
 
