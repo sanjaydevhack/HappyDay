@@ -9,13 +9,13 @@ import android.support.v4.view.GravityCompat;
 import android.support.v4.view.ViewPager;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBarDrawerToggle;
-import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
 
 import com.independentdev.together.R;
 import com.independentdev.together.adapter.ShowCasePagerAdapter;
@@ -24,7 +24,7 @@ import com.independentdev.together.model.ShowCaseData;
 import com.independentdev.together.util.AlertDialogFragment;
 import com.independentdev.together.util.ApiClient;
 import com.independentdev.together.util.ApiInterface;
-import com.independentdev.together.transformation.ZoomOutPageTransformer;
+import com.independentdev.together.util.MyAppCompactActivity;
 
 import java.util.List;
 
@@ -34,7 +34,7 @@ import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
 
-public class MainActivity extends AppCompatActivity
+public class MainActivity extends MyAppCompactActivity
         implements NavigationView.OnNavigationItemSelectedListener {
 
     private static final String TAG = MainActivity.class.getSimpleName();
@@ -49,6 +49,8 @@ public class MainActivity extends AppCompatActivity
     DrawerLayout drawer;
     @BindView(R.id.testImg)
     ImageView testImg;
+    @BindView(R.id.content_main)
+    LinearLayout contentMainLay;
 
     private List<ShowCaseData> showCaseDataList;
 
@@ -64,9 +66,6 @@ public class MainActivity extends AppCompatActivity
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
-                        .setAction("Action", null).show();
-
                 DialogFragment dialogFragment = AlertDialogFragment.newInstance("Title",
                         "Message", "Yes", "No");
                 dialogFragment.show(getSupportFragmentManager(), "dialogFragment");
@@ -122,7 +121,7 @@ public class MainActivity extends AppCompatActivity
                     ShowCasePagerAdapter showCasePagerAdapter = new ShowCasePagerAdapter(getApplicationContext(), showCaseDataList);
                     viewPager.setAdapter(showCasePagerAdapter);
                     viewPager.setCurrentItem(1);
-                    viewPager.setPageTransformer(true, new ZoomOutPageTransformer());
+                    //viewPager.setPageTransformer(true, new ZoomOutPageTransformer());
 
                     // Disable clip to padding
                     viewPager.setClipToPadding(false);
@@ -174,5 +173,17 @@ public class MainActivity extends AppCompatActivity
         } else {
             super.onBackPressed();
         }
+    }
+
+    @Override
+    public void doPositiveClick() {
+        Snackbar.make(contentMainLay, "Clicked Yes", Snackbar.LENGTH_LONG)
+                .setAction("Action", null).show();
+    }
+
+    @Override
+    public void doNegativeClick() {
+        Snackbar.make(contentMainLay, "Clicked No", Snackbar.LENGTH_LONG)
+                .setAction("Action", null).show();
     }
 }

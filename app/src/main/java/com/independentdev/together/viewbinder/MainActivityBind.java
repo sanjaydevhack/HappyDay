@@ -14,6 +14,7 @@ import butterknife.BindView;
  */
 
 public class MainActivityBind {
+
     @BindView(R.id.showCaseViewPager)
     ViewPager viewPager;
     @BindView(R.id.toolbar)
