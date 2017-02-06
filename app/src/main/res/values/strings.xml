@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">HappyDay</string>
+    <string name="app_name">Ink</string>
     <string name="title_activity_main">MainActivity</string>
 
     <string name="navigation_drawer_open">Open navigation drawer</string>
@@ -9,4 +9,6 @@
 
     <!-- SplashScreen Texts-->
     <string name="splash_text">Either write something worth reading or do something worth writing</string>
+
+    <!-- MainActivity-->
 </resources>

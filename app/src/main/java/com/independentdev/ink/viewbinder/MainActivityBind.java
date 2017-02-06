@@ -1,11 +1,11 @@
-package com.independentdev.writer.viewbinder;
+package com.independentdev.ink.viewbinder;
 
 import android.support.design.widget.FloatingActionButton;
 import android.support.v4.view.ViewPager;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.widget.Toolbar;
 
-import com.independentdev.writer.R;
+import com.independentdev.ink.R;
 
 import butterknife.BindView;
 

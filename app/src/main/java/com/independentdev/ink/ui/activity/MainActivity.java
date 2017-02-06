@@ -1,4 +1,4 @@
-package com.independentdev.writer.ui.activity;
+package com.independentdev.ink.ui.activity;
 
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
@@ -17,14 +17,14 @@ import android.view.View;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 
-import com.independentdev.writer.R;
-import com.independentdev.writer.adapter.ShowCasePagerAdapter;
-import com.independentdev.writer.model.ShowCase;
-import com.independentdev.writer.model.ShowCaseData;
-import com.independentdev.writer.util.AlertDialogFragment;
-import com.independentdev.writer.util.ApiClient;
-import com.independentdev.writer.util.ApiInterface;
-import com.independentdev.writer.util.MyAppCompactActivity;
+import com.independentdev.ink.R;
+import com.independentdev.ink.adapter.ShowCasePagerAdapter;
+import com.independentdev.ink.model.ShowCase;
+import com.independentdev.ink.model.ShowCaseData;
+import com.independentdev.ink.util.AlertDialogFragment;
+import com.independentdev.ink.util.ApiClient;
+import com.independentdev.ink.util.ApiInterface;
+import com.independentdev.ink.util.MyAppCompactActivity;
 
 import java.util.List;
 

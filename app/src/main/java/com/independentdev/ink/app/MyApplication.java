@@ -1,8 +1,8 @@
-package com.independentdev.writer.app;
+package com.independentdev.ink.app;
 
 import android.app.Application;
 
-import com.independentdev.writer.util.FontsOverride;
+import com.independentdev.ink.util.FontsOverride;
 
 /**
  * Created by sanjayjith.madhavan on 2/6/2017.

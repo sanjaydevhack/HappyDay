@@ -1,4 +1,4 @@
-package com.independentdev.writer.ui.activity;
+package com.independentdev.ink.ui.activity;
 
 import android.content.Intent;
 import android.graphics.Typeface;
@@ -7,7 +7,7 @@ import android.os.Handler;
 import android.support.v7.app.AppCompatActivity;
 import android.widget.TextView;
 
-import com.independentdev.writer.R;
+import com.independentdev.ink.R;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;

@@ -1,4 +1,4 @@
-package com.independentdev.writer;
+package com.independentdev.ink;
 
 import org.junit.Test;
 

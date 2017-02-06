@@ -1,4 +1,4 @@
-package com.independentdev.writer.transformation;
+package com.independentdev.ink.transformation;
 
 import android.support.v4.view.ViewPager;
 import android.view.View;

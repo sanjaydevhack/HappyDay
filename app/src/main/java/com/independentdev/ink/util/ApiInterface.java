@@ -1,6 +1,6 @@
-package com.independentdev.writer.util;
+package com.independentdev.ink.util;
 
-import com.independentdev.writer.model.ShowCase;
+import com.independentdev.ink.model.ShowCase;
 
 import retrofit2.Call;
 import retrofit2.http.GET;

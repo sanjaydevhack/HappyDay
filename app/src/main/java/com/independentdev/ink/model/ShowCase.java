@@ -1,4 +1,4 @@
-package com.independentdev.writer.model;
+package com.independentdev.ink.model;
 
 import com.google.gson.annotations.SerializedName;
 

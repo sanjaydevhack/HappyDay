@@ -1,4 +1,4 @@
-package com.independentdev.writer;
+package com.independentdev.ink;
 
 import android.content.Context;
 import android.support.test.InstrumentationRegistry;

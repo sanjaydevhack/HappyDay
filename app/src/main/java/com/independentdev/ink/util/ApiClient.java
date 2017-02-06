@@ -1,4 +1,4 @@
-package com.independentdev.writer.util;
+package com.independentdev.ink.util;
 
 import retrofit2.Retrofit;
 import retrofit2.converter.gson.GsonConverterFactory;
