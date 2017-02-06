@@ -1,4 +1,4 @@
-package com.independentdev.together;
+package com.independentdev.writer;
 
 import android.content.Context;
 import android.support.test.InstrumentationRegistry;

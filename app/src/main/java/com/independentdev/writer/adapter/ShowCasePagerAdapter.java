@@ -1,4 +1,4 @@
-package com.independentdev.together.adapter;
+package com.independentdev.writer.adapter;
 
 import android.content.Context;
 import android.support.v4.view.PagerAdapter;
@@ -12,8 +12,8 @@ import android.widget.TextView;
 
 import com.bumptech.glide.Glide;
 import com.bumptech.glide.load.engine.DiskCacheStrategy;
-import com.independentdev.together.R;
-import com.independentdev.together.model.ShowCaseData;
+import com.independentdev.writer.R;
+import com.independentdev.writer.model.ShowCaseData;
 
 import java.util.List;
 

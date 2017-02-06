@@ -1,4 +1,4 @@
-package com.independentdev.together.util;
+package com.independentdev.writer.util;
 
 import android.content.Context;
 import android.graphics.Typeface;

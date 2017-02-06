@@ -1,6 +1,6 @@
-package com.independentdev.together.util;
+package com.independentdev.writer.util;
 
-import com.independentdev.together.model.ShowCase;
+import com.independentdev.writer.model.ShowCase;
 
 import retrofit2.Call;
 import retrofit2.http.GET;

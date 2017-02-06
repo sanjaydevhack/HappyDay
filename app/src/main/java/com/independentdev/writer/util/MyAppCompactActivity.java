@@ -1,4 +1,4 @@
-package com.independentdev.together.util;
+package com.independentdev.writer.util;
 
 import android.support.v7.app.AppCompatActivity;
 

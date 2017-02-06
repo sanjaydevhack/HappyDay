@@ -1,4 +1,4 @@
-package com.independentdev.together.util;
+package com.independentdev.writer.util;
 
 import android.app.AlertDialog;
 import android.app.Dialog;
@@ -7,7 +7,7 @@ import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.v4.app.DialogFragment;
 
-import com.independentdev.together.R;
+import com.independentdev.writer.R;
 
 /**
  * Created by sanjayjith.madhavan on 1/31/2017.
