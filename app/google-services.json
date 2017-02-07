@@ -1,0 +1,42 @@
+{
+  "project_info": {
+    "project_number": "318152934780",
+    "firebase_url": "https://ink-mobile.firebaseio.com",
+    "project_id": "ink-mobile",
+    "storage_bucket": "ink-mobile.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:318152934780:android:cf4e1ca0833c7672",
+        "android_client_info": {
+          "package_name": "com.independentdev.ink"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "318152934780-8gn069d864vjolfrf3ue42do50km36fq.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAtVY30HsZE_rsCfNg7-Ot6981bHozGDXI"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
