@@ -1,6 +1,8 @@
 package com.independentdev.ink.ui.activity;
 
 import android.os.Bundle;
+import android.support.design.widget.AppBarLayout;
+import android.support.design.widget.CollapsingToolbarLayout;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.NavigationView;
 import android.support.design.widget.Snackbar;
@@ -14,11 +16,11 @@ import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
-import android.widget.ImageView;
 import android.widget.LinearLayout;
 
 import com.independentdev.ink.R;
 import com.independentdev.ink.adapter.ShowCasePagerAdapter;
+import com.independentdev.ink.helper.CommonMethods;
 import com.independentdev.ink.model.ShowCase;
 import com.independentdev.ink.model.ShowCaseData;
 import com.independentdev.ink.util.AlertDialogFragment;
@@ -47,10 +49,12 @@ public class MainActivity extends MyAppCompactActivity
     FloatingActionButton fab;
     @BindView(R.id.drawer_layout)
     DrawerLayout drawer;
-    @BindView(R.id.testImg)
-    ImageView testImg;
     @BindView(R.id.content_main)
     LinearLayout contentMainLay;
+    @BindView(R.id.main_app_bar_layout)
+    AppBarLayout appBarLayout;
+    @BindView(R.id.main_collapsing_toolbar)
+    CollapsingToolbarLayout collapsingToolbarLay;
 
     private List<ShowCaseData> showCaseDataList;
 
@@ -62,6 +66,9 @@ public class MainActivity extends MyAppCompactActivity
 
         setSupportActionBar(toolbar);
         makeShowCaseReq();
+
+        if(CommonMethods.isAboveLolipop())
+            toolbar.setElevation(10);
 
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -79,6 +86,10 @@ public class MainActivity extends MyAppCompactActivity
 
         NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(this);
+
+        collapsingToolbarLay.setTitle(getClass().getSimpleName());
+        collapsingToolbarLay.setExpandedTitleColor(getResources().getColor(R.color.transperent));
+        collapsingToolbarLay.setCollapsedTitleTextColor(getResources().getColor(R.color.white));
     }
 
     @Override
@@ -126,9 +137,9 @@ public class MainActivity extends MyAppCompactActivity
                     // Disable clip to padding
                     viewPager.setClipToPadding(false);
                     // set padding manually, the more you set the padding the more you see of prev & next page
-                    viewPager.setPadding(100, 0, 100, 0);
+                    viewPager.setPadding(100, 70, 100, 70);
                     // sets a margin b/w individual pages to ensure that there is a gap b/w them
-                    viewPager.setPageMargin(20);
+                    viewPager.setPageMargin(50);
                 }
             }
 

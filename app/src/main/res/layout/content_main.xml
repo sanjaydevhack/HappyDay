@@ -1,26 +1,24 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<android.support.v4.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/content_main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:padding="10dp"
     android:orientation="vertical"
-    android:paddingBottom="@dimen/activity_vertical_margin"
-    android:paddingLeft="@dimen/activity_horizontal_margin"
-    android:paddingRight="@dimen/activity_horizontal_margin"
-    android:paddingTop="@dimen/activity_vertical_margin"
     app:layout_behavior="@string/appbar_scrolling_view_behavior"
     tools:context="com.independentdev.ink.ui.activity.MainActivity"
     tools:showIn="@layout/app_bar_main">
 
-    <android.support.v4.view.ViewPager
-        android:id="@+id/showCaseViewPager"
+    <LinearLayout
+        android:id="@+id/content_main"
         android:layout_width="match_parent"
-        android:layout_height="175dp" />
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
 
-    <ImageView
-        android:id="@+id/testImg"
-        android:layout_width="match_parent"
-        android:layout_height="200dp" />
-</LinearLayout>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/large_text" />
+    </LinearLayout>
+</android.support.v4.widget.NestedScrollView>
