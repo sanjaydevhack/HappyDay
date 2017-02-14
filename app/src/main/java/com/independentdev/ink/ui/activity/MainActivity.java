@@ -67,7 +67,7 @@ public class MainActivity extends MyAppCompactActivity
         setSupportActionBar(toolbar);
         makeShowCaseReq();
 
-        if(CommonMethods.isAboveLolipop())
+        if (CommonMethods.isAboveLolipop())
             toolbar.setElevation(10);
 
         fab.setOnClickListener(new View.OnClickListener() {
@@ -157,11 +157,11 @@ public class MainActivity extends MyAppCompactActivity
         int id = item.getItemId();
 
         switch (id) {
-            case R.id.nav_camera:
+            case R.id.nav_my_profile:
                 break;
-            case R.id.nav_gallery:
+            case R.id.nav_connect:
                 break;
-            case R.id.nav_slideshow:
+            case R.id.nav_favorites:
                 break;
             case R.id.nav_manage:
                 break;
