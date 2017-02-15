@@ -19,4 +19,5 @@ public class MyApplication extends Application {
         FontsOverride.setDefaultFont(this, "SERIF", "fonts/Scene-Regular.ttf");
         //FontsOverride.setDefaultFont(this, "SANS_SERIF", "fonts/Roboto-Light.ttf");
     }
+
 }
