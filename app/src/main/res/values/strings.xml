@@ -8,12 +8,23 @@
     <string name="action_settings">Settings</string>
 
     <!-- Other Texts -->
-    <string name="user_name">Sanjay M</string>
+    <string name="my_name">Sanjay M</string>
     <string name="user_mail_id">isanjay02@gmail.com</string>
     <string name="user_pic">User Profile Picture</string>
+    <string name="cover_pic">Cover Picture</string>
 
-    <!-- SplashScreen Texts-->
+    <!-- SplashScreen -->
     <string name="splash_text">Either write something worth reading or do something worth writing</string>
+
+    <!-- LoginScreen -->
+    <string name="sign_in">Sign in</string>
+    <string name="sign_up">Sign up</string>
+    <string name="full_name">Full Name</string>
+    <string name="user_name">Username</string>
+    <string name="mail_id">Email Address</string>
+    <string name="mobile_no">Mobile Number</string>
+    <string name="password">Password</string>
+    <string name="forget_password">Forget Password?</string>
 
     <!-- MainActivity-->
 

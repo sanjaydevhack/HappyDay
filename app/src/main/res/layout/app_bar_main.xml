@@ -26,8 +26,7 @@
                 android:layout_height="225dp"
                 android:layout_marginTop="?attr/actionBarSize"
                 android:background="@color/colorPrimary"
-                app:layout_collapseMode="parallax"
-                app:layout_collapseParallaxMultiplier=".8" />
+                app:layout_collapseMode="parallax" />
 
             <android.support.v7.widget.Toolbar
                 android:id="@+id/toolbar"

@@ -16,7 +16,7 @@ import butterknife.ButterKnife;
 
 public class SplashScreenActivity extends Activity {
 
-    private static final String TAG = "SplashScreenActivity";
+    private static final String TAG = SplashScreenActivity.class.getSimpleName();
 
     @BindView(R.id.splashTV)
     TextView splashTV;
@@ -39,7 +39,7 @@ public class SplashScreenActivity extends Activity {
             public void run() {
                 // This method will be executed once the timer is over
                 // Start your app main activity
-                Intent i = new Intent(SplashScreenActivity.this, MainActivity.class);
+                Intent i = new Intent(SplashScreenActivity.this, LoginActivity.class);
                 startActivity(i);
 
                 // close this activity

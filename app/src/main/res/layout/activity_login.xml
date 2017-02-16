@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_login"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/login_bg"
+    android:gravity="center"
+    tools:context="com.independentdev.ink.ui.activity.LoginActivity">
+
+    <include
+        android:id="@+id/loginIncludedLay"
+        layout="@layout/login_card_view"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginBottom="85dp"
+        android:layout_marginLeft="55dp"
+        android:layout_marginRight="55dp"
+        android:layout_marginTop="85dp" />
+
+    <android.support.design.widget.FloatingActionButton
+        android:id="@+id/loginGo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/loginIncludedLay"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentRight="true"
+        android:layout_marginBottom="17dp"
+        android:layout_marginEnd="32dp"
+        android:layout_marginRight="32dp"
+        app:srcCompat="@drawable/ic_login_go" />
+</RelativeLayout>
