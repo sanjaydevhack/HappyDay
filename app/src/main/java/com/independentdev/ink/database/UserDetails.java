@@ -14,6 +14,8 @@ public class UserDetails extends RealmObject {
     private String password;
     private String userPic;
     private String coverPic;
+    private String loginWith;
+    private String loginApiKey;
 
     public String getFullName() {
         return fullName;
@@ -61,5 +63,21 @@ public class UserDetails extends RealmObject {
 
     public void setCoverPic(String coverPic) {
         this.coverPic = coverPic;
+    }
+
+    public String getLoginWith() {
+        return loginWith;
+    }
+
+    public void setLoginWith(String loginWith) {
+        this.loginWith = loginWith;
+    }
+
+    public String getLoginApiKey() {
+        return loginApiKey;
+    }
+
+    public void setLoginApiKey(String loginApiKey) {
+        this.loginApiKey = loginApiKey;
     }
 }
