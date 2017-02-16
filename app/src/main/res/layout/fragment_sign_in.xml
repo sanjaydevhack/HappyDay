@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:gravity="center"
@@ -15,7 +16,9 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:hint="@string/user_name"
-            android:imeOptions="actionNext" />
+            android:imeOptions="actionNext"
+            android:inputType="text"
+            android:maxLines="1" />
     </android.support.design.widget.TextInputLayout>
 
     <android.support.design.widget.TextInputLayout
@@ -28,13 +31,44 @@
             android:layout_height="wrap_content"
             android:hint="@string/password"
             android:imeOptions="actionGo"
-            android:inputType="textPassword" />
+            android:inputType="textPassword"
+            android:maxLines="1" />
     </android.support.design.widget.TextInputLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="35dp"
+        android:layout_marginTop="20dp"
+        android:gravity="center"
+        android:orientation="horizontal"
+        android:weightSum="3">
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:padding="2dp"
+            android:layout_weight="1"
+            app:srcCompat="@drawable/ic_google" />
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            app:srcCompat="@drawable/ic_facebook" />
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            app:srcCompat="@drawable/ic_twitter" />
+    </LinearLayout>
 
     <TextView
         android:id="@+id/forgetPasswordTV"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="20dp"
         android:padding="5dp"
         android:text="@string/forget_password" />
 </LinearLayout>

@@ -14,6 +14,7 @@
     <string name="cover_pic">Cover Picture</string>
 
     <!-- SplashScreen -->
+    <string name="splash_screen_anim">Splash Screen Animation</string>
     <string name="splash_text">Either write something worth reading or do something worth writing</string>
 
     <!-- LoginScreen -->

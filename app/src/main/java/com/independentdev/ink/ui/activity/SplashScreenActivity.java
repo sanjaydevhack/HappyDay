@@ -7,6 +7,7 @@ import android.os.Bundle;
 import android.os.Handler;
 import android.view.Window;
 import android.view.WindowManager;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.independentdev.ink.R;
@@ -18,6 +19,8 @@ public class SplashScreenActivity extends Activity {
 
     private static final String TAG = SplashScreenActivity.class.getSimpleName();
 
+    @BindView(R.id.splashScreenIMV)
+    ImageView splashScreenIMV;
     @BindView(R.id.splashTV)
     TextView splashTV;
 
