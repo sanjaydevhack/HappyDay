@@ -46,20 +46,24 @@
         <ImageView
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
-            android:padding="2dp"
             android:layout_weight="1"
+            android:contentDescription="@string/ic_google"
+            android:padding="2dp"
             app:srcCompat="@drawable/ic_google" />
 
         <ImageView
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
             android:layout_weight="1"
+            android:contentDescription="@string/ic_facebook"
             app:srcCompat="@drawable/ic_facebook" />
 
         <ImageView
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
             android:layout_weight="1"
+            android:contentDescription="@string/ic_twitter"
+            android:padding=".2dp"
             app:srcCompat="@drawable/ic_twitter" />
     </LinearLayout>
 

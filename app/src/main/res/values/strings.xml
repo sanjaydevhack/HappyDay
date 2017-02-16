@@ -26,6 +26,9 @@
     <string name="mobile_no">Mobile Number</string>
     <string name="password">Password</string>
     <string name="forget_password">Forget Password?</string>
+    <string name="ic_google">Google Icon</string>
+    <string name="ic_facebook">Facebook Icon</string>
+    <string name="ic_twitter">Twitter Icon</string>
 
     <!-- MainActivity-->
 
