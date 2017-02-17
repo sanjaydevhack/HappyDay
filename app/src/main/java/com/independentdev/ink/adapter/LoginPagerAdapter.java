@@ -13,17 +13,26 @@ import com.independentdev.ink.ui.fragment.SignUpFragment;
 
 public class LoginPagerAdapter extends FragmentPagerAdapter {
 
+    public SignInFragment signInFragment;
+    public SignUpFragment signUpFragment;
+
     public LoginPagerAdapter(FragmentManager fm) {
         super(fm);
+    }
+
+    public LoginPagerAdapter(FragmentManager fm, SignInFragment signInFragment, SignUpFragment signUpFragment) {
+        super(fm);
+        this.signInFragment = signInFragment;
+        this.signUpFragment = signUpFragment;
     }
 
     @Override
     public Fragment getItem(int position) {
         switch (position) {
             case 0:
-                return new SignInFragment();
+                return signInFragment != null ? signInFragment : new SignInFragment();
             case 1:
-                return new SignUpFragment();
+                return signUpFragment != null ? signUpFragment : new SignUpFragment();
         }
         return null;
     }

@@ -26,7 +26,7 @@ import com.independentdev.ink.model.ShowCaseData;
 import com.independentdev.ink.util.AlertDialogFragment;
 import com.independentdev.ink.util.ApiClient;
 import com.independentdev.ink.util.ApiInterface;
-import com.independentdev.ink.util.MyAppCompactActivity;
+import com.independentdev.ink.helper.MyAppCompactActivity;
 
 import java.util.List;
 

@@ -8,6 +8,7 @@ import android.support.annotation.NonNull;
 import android.support.v4.app.DialogFragment;
 
 import com.independentdev.ink.R;
+import com.independentdev.ink.helper.MyAppCompactActivity;
 
 /**
  * Created by sanjayjith.madhavan on 1/31/2017.

@@ -9,7 +9,8 @@
 
     <android.support.design.widget.TextInputLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="wrap_content"
+        app:errorEnabled="true">
 
         <EditText
             android:id="@+id/userNameET"
@@ -18,12 +19,14 @@
             android:hint="@string/user_name"
             android:imeOptions="actionNext"
             android:inputType="text"
+            android:maxLength="25"
             android:maxLines="1" />
     </android.support.design.widget.TextInputLayout>
 
     <android.support.design.widget.TextInputLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="wrap_content"
+        app:errorEnabled="true">
 
         <EditText
             android:id="@+id/userPasswordET"
@@ -32,6 +35,7 @@
             android:hint="@string/password"
             android:imeOptions="actionGo"
             android:inputType="textPassword"
+            android:maxLength="25"
             android:maxLines="1" />
     </android.support.design.widget.TextInputLayout>
 
@@ -63,7 +67,7 @@
             android:layout_height="match_parent"
             android:layout_weight="1"
             android:contentDescription="@string/ic_twitter"
-            android:padding=".2dp"
+            android:padding="0.2dp"
             app:srcCompat="@drawable/ic_twitter" />
     </LinearLayout>
 

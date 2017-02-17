@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="colorPrimary">#2d2d3e</color>
-    <color name="colorPrimaryDark">#25252F</color>
+    <color name="colorPrimary">#174557</color>
+    <color name="colorPrimaryDark">#0b242e</color>
     <color name="colorAccent">#1ad1cc</color>
     <color name="white">#FEFFFF</color>
     <color name="transperent">#00000000</color>
-    <color name="login_bg">#174557</color>
+    <!--<color name="login_bg">#174557</color>-->
     <color name="silver_tree">#56D491</color>
 </resources>

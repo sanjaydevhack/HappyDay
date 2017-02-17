@@ -4,6 +4,8 @@ import android.content.Context;
 import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
 import android.os.Build;
+import android.support.design.widget.Snackbar;
+import android.view.View;
 
 /**
  * Created by sanjayjith.madhavan on 2/14/2017.
@@ -36,5 +38,10 @@ public class CommonMethods {
                     haveConnectedMobile = true;
         }
         return haveConnectedWifi || haveConnectedMobile;
+    }
+
+    public void showSnackbar(View view, String message) {
+        Snackbar.make(view, "Clicked Yes", Snackbar.LENGTH_LONG)
+                .setAction("Action", null).show();
     }
 }

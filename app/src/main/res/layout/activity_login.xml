@@ -5,7 +5,7 @@
     android:id="@+id/activity_login"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/login_bg"
+    android:background="@color/colorPrimary"
     android:gravity="center"
     tools:context="com.independentdev.ink.ui.activity.LoginActivity">
 
