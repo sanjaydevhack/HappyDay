@@ -1,6 +1,7 @@
 package com.independentdev.ink.ui.fragment;
 
 import android.content.Context;
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
@@ -11,6 +12,8 @@ import android.widget.EditText;
 import android.widget.Toast;
 
 import com.independentdev.ink.R;
+import com.independentdev.ink.helper.CommonMethods;
+import com.independentdev.ink.ui.activity.MainActivity;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
@@ -45,9 +48,55 @@ public class SignUpFragment extends Fragment {
         String mobileNoStr = mobileNoET.getText().toString();
         String emailIdStr = emailIdET.getText().toString();
         String signUpPasswordStr = signUpPasswordET.getText().toString();
+
+        if (!fullNameStr.isEmpty()) {
+            fullNameET.setError(null);
+            if (fullNameStr.length() >= 6) {
+                fullNameET.setError(null);
+                if (!mobileNoStr.isEmpty()) {
+                    mobileNoET.setError(null);
+                    if (mobileNoStr.length() >= 10) {
+                        mobileNoET.setError(null);
+                        if (!emailIdStr.isEmpty()) {
+                            emailIdET.setError(null);
+                            if (CommonMethods.isEmailValid(emailIdStr)) {
+                                emailIdET.setError(null);
+                                if (!signUpPasswordStr.isEmpty()) {
+                                    signUpPasswordET.setError(null);
+                                    if (CommonMethods.isValidPassword(signUpPasswordStr)) {
+                                        signUpPasswordET.setError(null);
+
+                                        doSignup(getContext());
+
+                                    } else {
+                                        signUpPasswordET.setError("Password should contain atleast one uppercase, number & symbol...!");
+                                    }
+                                } else {
+                                    signUpPasswordET.setError("Password cannot be empty...!");
+                                }
+                            } else {
+                                emailIdET.setError("Enter valid email id");
+                            }
+                        } else {
+                            emailIdET.setError("Email id cannot be empty...!");
+                        }
+                    } else {
+                        mobileNoET.setError("Enter valid mobile number...!");
+                    }
+                } else {
+                    mobileNoET.setError("Mobile number cannot be empty...!");
+                }
+            } else {
+                fullNameET.setError("Username is too short...!");
+            }
+        } else {
+            fullNameET.setError("Username cannot be empty...!");
+        }
     }
 
     public void doSignup(Context context) {
         Toast.makeText(context, "SignUp", Toast.LENGTH_SHORT).show();
+
+        startActivity(new Intent(context, MainActivity.class));
     }
 }

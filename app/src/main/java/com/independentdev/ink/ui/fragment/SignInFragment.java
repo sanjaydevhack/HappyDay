@@ -2,6 +2,7 @@ package com.independentdev.ink.ui.fragment;
 
 
 import android.content.Context;
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
@@ -9,8 +10,11 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.EditText;
+import android.widget.Toast;
 
 import com.independentdev.ink.R;
+import com.independentdev.ink.helper.CommonMethods;
+import com.independentdev.ink.ui.activity.MainActivity;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
@@ -43,15 +47,20 @@ public class SignInFragment extends Fragment {
 
         if (!userNameStr.isEmpty()) {
             userNameET.setError(null);
-            if (!(userNameStr.length() < 6)) {
+            if (userNameStr.length() >= 6) {
                 userNameET.setError(null);
                 if (!userPasswordStr.isEmpty()) {
                     userPasswordET.setError(null);
-                    if (!(userPasswordStr.length() < 6)) {
+                    if (userPasswordStr.length() >= 6) {
                         userPasswordET.setError(null);
+                        if (CommonMethods.isValidPassword(userPasswordStr)) {
+                            userPasswordET.setError(null);
 
-                        doLogin(getContext());
+                            doLogin(getContext());
 
+                        } else {
+                            userPasswordET.setError("Password should contain atleast one uppercase, number & symbol...!");
+                        }
                     } else {
                         userPasswordET.setError("Password is too short...!");
                     }
@@ -68,7 +77,9 @@ public class SignInFragment extends Fragment {
 
 
     public void doLogin(Context context) {
+        Toast.makeText(context, "SignIn", Toast.LENGTH_SHORT).show();
 
+        startActivity(new Intent(context, MainActivity.class));
     }
 
 }

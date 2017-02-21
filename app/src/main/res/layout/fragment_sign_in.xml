@@ -9,8 +9,7 @@
 
     <android.support.design.widget.TextInputLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        app:errorEnabled="true">
+        android:layout_height="wrap_content">
 
         <EditText
             android:id="@+id/userNameET"
@@ -25,15 +24,14 @@
 
     <android.support.design.widget.TextInputLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        app:errorEnabled="true">
+        android:layout_height="wrap_content">
 
         <EditText
             android:id="@+id/userPasswordET"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:hint="@string/password"
-            android:imeOptions="actionGo"
+            android:imeOptions="actionDone"
             android:inputType="textPassword"
             android:maxLength="25"
             android:maxLines="1" />
